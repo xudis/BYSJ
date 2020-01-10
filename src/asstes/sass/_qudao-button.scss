@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* button */
+.qd-btn {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  height: 40px;
+  line-height: 38px;
+  background-color: #FFF;
+  border: 1px solid $main-blue;
+  color: $main-blue;
+  padding: 0 24px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  outline: none;
+
+  &:hover {
+    border-color: lighten($main-blue, 5%);
+    color: lighten($main-blue, 5%);
+  }
+
+  &:active {
+    border-color: darken($main-blue, 5%);
+    color: darken($main-blue, 5%);
+  }
+
+  // 主按钮
+  &.btn-primary {
+    background-color: $main-blue;
+    color: #FFF;
+
+    &:hover {
+      border-color: lighten($main-blue, 5%);
+      background-color: lighten($main-blue, 5%);
+    }
+  
+    &:active {
+      border-color: darken($main-blue, 5%);
+      background-color: darken($main-blue, 5%);
+    }
+  }
+
+  // 灰色边线按钮
+  &.btn-gray-line {
+    border-color: #AAA;
+    color: #888;
+
+    &:hover {
+      border-color: lighten($main-blue, 5%);
+      color: lighten($main-blue, 5%);
+    }
+  
+    &:active {
+      border-color: darken($main-blue, 5%);
+      color: darken($main-blue, 5%);
+    }
+  }
+  
+}

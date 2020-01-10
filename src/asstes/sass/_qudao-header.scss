@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+/* header */
+.qd-header {
+  height: 70px;
+  background-color: #FFF;
+  @include box-shadow(0 1px 3px rgba(64,64,64,.1));
+}
+
+// 系统 logo
+.head-logo {
+  float: left;
+  width: 50px;
+  height: 40px;
+  margin-top: 15px;
+}
+
+// 系统名称
+.head-text {
+  float: left;
+  margin: 23px 0 0 0;
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: $main-blue;
+  position: relative;
+
+  &:before {
+    content: "";
+    width: 1px;
+    height: 20px;
+    background-color: $main-blue;
+    position: absolute;
+    top: 2px;
+    left: 10px;
+  }
+}
+
+// 导航菜单
+.head-nav {
+  float: left;
+  box-sizing: border-box;
+  margin: 0 0 0 100px;
+  padding: 0;
+  border-right: 1px solid #EEE;
+
+  > li {
+    float: left;
+    list-style: none;
+    border-left: 1px solid #EEE;
+
+    > a {
+      display: block;
+      position: relative;
+      height: 70px;
+      line-height: 70px;
+      padding: 0 36px;
+      color: #333;
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: none;
+
+      &:hover {
+        color: $main-blue;
+      }
+
+      // 底部线条
+      &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 5px;
+      background-color: $main-blue;
+      @include transition(all .2s ease-in-out);
+      }
+
+    }
+
+    // 当前状态
+    &.active {
+      > a {
+        color: $main-blue;
+        &:after {
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+
+  }
+}
+
+// 头部用户相关
+.head-user {
+  margin: 0;
+  padding: 0;
+  float: right;
+
+  > li {
+    float: left;
+    list-style: none;
+    border-right: 1px solid #EEE;
+
+    > a {
+      display: block;
+      height: 70px;
+      line-height: 70px;
+      padding: 0 28px;
+      font-size: 20px;
+      color: #999;
+      text-decoration: none;
+      position: relative;
+      &:hover {
+        color: #333;
+      }
+    }
+    
+    // 徽章
+    .badge {
+      display: inline-block;
+      height: 18px;
+      line-height: 18px;
+      border-radius: 20px;
+      background-color: #FF5252;
+      padding: 0 5px;
+      white-space: nowrap;
+      font-style: normal;
+      font-size: 10px;
+      @include prefixer(transform, scale(0.8), webkit);
+      color: #FFF;
+      position: absolute;
+      right: 8px;
+      top: 16px;
+    }
+  }
+}

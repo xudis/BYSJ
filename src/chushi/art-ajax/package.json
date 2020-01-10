@@ -1,0 +1,16 @@
+{
+	"name": "art-ajax",
+	"version": "2.2.1",
+	"description": "Art base ajax",
+	"main": "dist/index.min.js",
+	"module": "dist/index.min.js",
+	"scripts": {},
+	"keywords": [
+		"cmos Art ajax"
+	],
+	"author": "",
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {},
+	"peerDependencies": {}
+}

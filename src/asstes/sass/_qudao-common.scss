@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+// 变量
+$main-blue:                  #4a8ef2 !default;
+
+/* common */
+// 重置
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body,
+input,
+button,
+textarea {
+  font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+body {
+  background-color: #F5F6F9;
+  display: flex;
+  flex-direction: column;
+}
+
+
+// 清除浮动
+.clearfix {
+  &:after {
+    content: "";
+    clear: both;
+    height: 0;
+    display: table;
+    overflow: hidden;
+  }
+}
+
+// 文字溢出
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+// 透明度
+@mixin opacity($opacity: 50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+%opacity{
+  @include opacity;
+}

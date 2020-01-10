@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/* main */
+.qd-main {
+  flex: 1;
+}
+
+// 内部包裹器
+
+.qd-inner {
+  min-width:1040px;
+  max-width:1200px;
+  margin: 0 auto;
+}
+// 容器
+.qd-box {
+  background-color: #FFF;
+  border-radius: 4px;
+}
+
