@@ -1,0 +1,160 @@
+@charset "UTF-8"；
+
+//框架重置样式
+//此为共用类样式
+.art-modal-content{
+    overflow-y: auto;
+}
+.margin_top_20{
+    margin-top: 20px;
+}
+.cursor{
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}
+.normal-list{
+    width: auto;
+    padding-left: 0;
+    &>li{
+        padding: 10px !important;
+        line-height: 30px !important;
+        font-size: 14px;
+        cursor: pointer;
+        &.select{
+            color:#1890ff;
+            background: #e6f7ff;
+        }
+        &:hover{
+            color:#1890ff;
+            background: #e6f7ff;
+        }
+    }
+}
+li{
+    list-style: none;
+}
+#root{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: #F5F6F9;
+    display: flex;
+    flex-direction: column;
+    font-family: "PingFang SC","Microsoft YaHei"，sans-serif;
+}
+.data-center-h3{
+    margin: 18px 0;
+    span{
+        font-weight: bolder;
+    }
+}
+.project-tip >p{
+    margin: 12px 0;
+}
+h2{
+    margin: 20px 0;
+}
+//-----------------组织管理----------
+.organziation-wrap{
+background: #fff;
+.organziation-search-wrap{
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    .seach{
+        background: #666;
+        color: #fff;
+        width:80px;
+        height: 35px;
+        float: right;
+    }
+}
+&.store-manage-wrap{
+    .code{
+        line-height: 30px;
+    }
+    .storeNm{
+        text-align: center;
+        font-size: 18px;
+        font-weight: bolder;
+    }
+    .address{
+        white-space: pre;
+        text-align: center;
+    }
+    img{
+        width: 40px;
+        height: 40px;
+    }
+    .ant-table-tbody > tr > th{
+        text-align: center;
+    }
+    .ant-table-tbody > tr > td{
+        text-align: center;
+        padding: 5px;
+    }
+}
+}
+.qd-store{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.common-title-mt-10{
+    margin-top: 23px;
+}
+.common-title-mt-10{
+    h3{
+        span{
+            font-size: 24px;
+        }
+    }
+}
+
+//----------个人中心模块新增样式-------
+//营销结果修改日志模块
+.modify_log-wrap{
+    background: #fff;
+    .tab-wrap{
+        padding: 15px 0;
+        text-align: center;
+        a{
+            color:#000;
+            display: inline-block;
+            font-size: 18px;
+            padding: 10px 20px;
+            &.choose{
+                border-bottom: 5px solid #000;
+            }
+        }
+    }
+    .modify_log-search-wrap{
+        overflow: hidden;
+        li{
+            float: left;
+            list-style: none;
+            padding-right: 20px;
+            line-height: 36px;
+            height: 36px;
+        }
+    }
+}
+/**
+上传图片-轮播
+**/
+.art-upload-list{
+    .art-upload-error{
+        min-width: 450px !important;
+    }
+}
+.art-upload-done{
+    height: 32px;
+    min-width: 450px !important;
+    padding-left: 10px;
+    background-color: #fff;
+}
+.art-upload-doing{
+    min-width: 450px !important;
+
+}
