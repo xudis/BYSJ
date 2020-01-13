@@ -10,13 +10,14 @@ export interface IProps {
     listMessage: Array<{}>,
     showDetail: Function,
     searchParamsParam: object,
-    history: {
-        push: Function
-    }
+    history: any
+    //     {
+    //     push: Function
+    // }
 }
 
 
-export default class Data_center extends Component<IProps, IState>{
+export default class MessageList extends Component<IProps, IState>{
     constructor(props: IProps) {
         super(props)
         this.state = {

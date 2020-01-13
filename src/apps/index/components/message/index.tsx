@@ -2,7 +2,8 @@ import React, { Component, Fragment } from "react"
 import Ajax from '../../../../chushi/art-ajax'
 import { Link } from 'react-router-dom'
 import { Pagination } from "antd"
-
+import MessageList from "./modules/messageList"
+import RightContent from "./modules/rightContent"
 export interface IState {
     messagelists: Array<{}>,
     rightContent: string,
@@ -44,6 +45,39 @@ export default class Data_center extends Component<IProps, IState>{
             }
         }
     }
+    public componentDidMount = () => {
+    }
+    public backClick = () => {
+        this.props.history.go(-1)
+    }
+    public showDetail = (item: {}) => {
+        this.setState({
+            details: item
+        })
+    }
+    public listSearch = () => {
+        Ajax.post("/message/getMsgList", this.state.searchParams).then(({ data }: { data: any }) => {
+            this.setState({
+                messagelists: data.beans,
+                total: data.bean.total
+            })
+        }).catch(() => { })
+    }
+    public pageSearch = (page: number) => {
+        this.setState({
+            searchParams: {
+                ...this.state.searchParams,
+                start: (page - 1) * this.state.searchParams.limit
+            }
+        }, () => { this.listSearch() })
+    }
+    public messageQuery = () => {
+        Ajax.post<IBean, IBeans>("/message/getUnReadMsgCount").then(({ data }: { data: any }) => {
+            this.setState({
+                messageCount: data.bean.count
+            })
+        }).catch(() => { })
+    }
     render() {
         return (
             <div>
@@ -62,8 +96,18 @@ export default class Data_center extends Component<IProps, IState>{
                             <span className="ml-10">未读</span>
                         </p>
                         <div className="clearfix neirong">
-
+                            <MessageList
+                                history={this.props.history}
+                                showDetail={this.showDetail}
+                                listMessage={this.state.messagelists}
+                                searchParamsParam={this.state.searchParams} >
+                            </MessageList>
+                            <RightContent details={this.state.details}></RightContent>
                         </div>
+                        <Pagination
+                            total={this.state.total}
+                            onChange={this.pageSearch}
+                        />
                     </div>
                 </div>
             </div>
