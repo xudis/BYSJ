@@ -312,7 +312,10 @@ export default class Organization extends Component<IProps, IState> {
     public pageSearch = (page: number) => {
         this.setState({
             page: page,
-            searchParams: { ...this.state.searchParams }
+            searchParams: {
+                ...this.state.searchParams,
+                start: (page - 1) - this.state.searchParams.limit
+            }
         }, () => {
             this.search()
         })

@@ -17,8 +17,9 @@ export interface IState {
         limit: number,
         start: number
     },
+    visible: boolean,
     page: number,
-    total: number,
+    total?: number,
     data: Array<{}>,
     searchParams: Object
 }
@@ -33,6 +34,7 @@ export default class StoreManage extends Component<IProps, IState>{
         this.state = {
             data: [],
             total: 0,
+            visible: false,
             searchParams: props.storeManageInit,
             page: 1,
             storeParam: {
@@ -74,10 +76,82 @@ export default class StoreManage extends Component<IProps, IState>{
             )
         }
     ]
+    public changeState = (record: any, _index: any) => {
+        const status = record.stsCd == "0" ? "1" : "0"
+        let statusData = {
+            stsCd: status,
+            id: record.id
+        }
+        Ajax.post<IBean, IBeans>("/storeStsCd/update", statusData, {}).then(() => {
+            this.getListContent()
+        }).catch(() => { })
+    }
+    public handleClose = () => {
+        this.props.toggleOpen()
+    }
+    public handleSubmit = () => {
+        this.props.toggleOpen()
+
+    }
+    public pageSearch = (page: number) => {
+        this.setState({
+            storeParam: {
+                ...this.state.storeParam,
+                start: (page - 1) * this.state.storeParam.limit
+            },
+            page: page
+        }, () => {
+            this.getListContent()
+        })
+    }
+    public getListContent = () => {
+        const { storeParam } = this.state
+        Ajax.post<IBean, IBeans>("/staffList/query", storeParam).then(({ data }) => {
+            this.setState({
+                data: data.beans,
+                total: data.bean.total
+            })
+        }).catch(() => { })
+    }
+    public componentDidMount = () => {
+        this.getListContent()
+    }
     render() {
         return (
-            <Modal >
+            <Modal
+                visible={this.state.visible}
+                style={{ width: "1100px", height: "550px" }}
+                onCancel={this.handleClose}
+                onOk={this.handleSubmit}
+                title="门店管理"
+            >
+                <div>
+                    <div className="organization-wrap store-manage-wrap">
+                        <div className="qd-inner">
+                            <div className="common-title">
+                                <p className="code">{this.props.storeManageInit.provChnlId}</p>
+                                <h3 className="storeNm">{this.props.storeManageInit.physclStoreNm}</h3>
+                                <p className="address">
+                                    {this.props.storeManageInit.areaName}
+                                </p>
+                            </div>
+                            <Table
+                                dataSource={this.state.data}
+                                columns={this.columns}
+                                bordered={true}
+                                pagination={false}
+                            >
+                            </Table>
 
+                            <div className="mt-10">
+                                <Pagination
+                                    total={this.state.total}
+                                    onChange={this.pageSearch}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </Modal>
         )
     }

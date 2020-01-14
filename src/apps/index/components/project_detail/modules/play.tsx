@@ -6,7 +6,7 @@ export interface IState {
 
 }
 
-export default class name extends Component<IProps, IState> {
+export default class Play extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props)
         this.state = {
