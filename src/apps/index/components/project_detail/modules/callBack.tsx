@@ -29,7 +29,7 @@ interface IBean {
 interface IBeans {
     beans: null | object | any[]
 }
-export default class name extends Component<IProps, IState> {
+export default class CallBack extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props)
         this.state = {
