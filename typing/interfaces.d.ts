@@ -6,8 +6,8 @@ import { IHandle } from "react-util"
 
 type IComponent = () => Promise<{ default: (ConnectedComponentClass<any, any> | ComponentClass<any, any>) }>
 export interface IRouterConfig {
-    path: string;
-    component: AsyncComponent;
+    path?: string;
+    component?: AsyncComponent;
     children?: IRouterConfig[];
     layout?: any
     // layout?: ComponentClass
