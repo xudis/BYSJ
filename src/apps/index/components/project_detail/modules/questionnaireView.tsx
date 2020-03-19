@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 export interface IProps {
-
+    imgUrl: string
 }
 export interface IState {
 
@@ -12,5 +12,14 @@ export default class name extends Component<IProps, IState> {
         this.state = {
 
         }
+    }
+    public render() {
+        return (
+            <div>
+                {
+                    <iframe src={this.props.imgUrl} style={{ width: "100%", height: "400px" }} ></iframe>
+                }
+            </div>
+        )
     }
 }
