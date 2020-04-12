@@ -39,9 +39,10 @@ export class DateRange extends Component<IProps, IState> {
         return endValue.valueOf() <= startValue.valueOf()
     }
     public onChange = (field: any, value: any) => {
-        this.setState({
-            [field]: value
-        })
+        // this.setState({
+        //     [field]: value
+        // })
+        console.log("aaa")
     }
     public onStartChange = (value: any) => {
         if (value === null) {

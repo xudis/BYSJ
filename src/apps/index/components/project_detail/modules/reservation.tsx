@@ -21,7 +21,7 @@ export interface IState {
     }
 }
 
-export default class name extends Component<IProps, IState> {
+export default class Reservation extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props)
         this.state = {
@@ -125,7 +125,7 @@ export default class name extends Component<IProps, IState> {
                                                                 return (
                                                                     <td>
                                                                         已超时
-                                                                        </td>
+                                                                    </td>
                                                                 )
                                                             } else {
                                                                 return (

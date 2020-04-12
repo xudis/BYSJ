@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { DatePicker } from 'antd'
 import Moment from "moment"
+import moment from "moment"
+
 export interface IProps {
     startValue: any,
     endValue: any,
-    timeChange: Function
+    search: Function
 
 }
 export interface IState {
@@ -16,8 +18,8 @@ export class DateRange extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props)
         this.state = {
-            startValue: props.startValue,
-            endValue: props.endValue,
+            startValue: this.props.startValue,
+            endValue: this.props.endValue,
             endOpen: false
         }
     }
@@ -38,22 +40,23 @@ export class DateRange extends Component<IProps, IState> {
         }
         return endValue.valueOf() <= startValue.valueOf()
     }
-    public onChange = (field: any, value: any) => {
+    public onChange = (field: string | any | number | symbol, value: any) => {
         // this.setState({
-        // [field]: value
+        //     [field]: value
         // })
+        console.log("aaa")
     }
     public onStartChange = (value: any) => {
-        if (value === null) {
-            this.setState({
-                startValue: value
-            }, () => {
-                this.props.timeChange({
-                    startValue: '',
-                    endValue: this.state.endValue ? this.state.endValue.format("YYYY-MM-DD HH:mm:ss") : ''
-                })
-            })
-        }
+        // if (value === null) {
+        //     this.setState({
+        //         startValue: value
+        //     }, () => {
+        //         this.props.timeChange({
+        //             startValue: '',
+        //             endValue: this.state.endValue ? this.state.endValue.format("YYYY-MM-DD HH:mm:ss") : ''
+        //         })
+        //     })
+        // }
         this.onChange('startValue', value)
     }
 
@@ -62,16 +65,16 @@ export class DateRange extends Component<IProps, IState> {
     }
 
     public onEndChange = (value: any) => {
-        if (value === null) {
-            this.setState({
-                startValue: value
-            }, () => {
-                this.props.timeChange({
-                    startValue: this.state.startValue ? this.state.startValue.format("YYYY-MM-DD HH:mm:ss") : '',
-                    endValue: ''
-                })
-            })
-        }
+        // if (value === null) {
+        //     this.setState({
+        //         startValue: value
+        //     }, () => {
+        //         this.props.timeChange({
+        //             startValue: this.state.startValue ? this.state.startValue.format("YYYY-MM-DD HH:mm:ss") : '',
+        //             endValue: ''
+        //         })
+        //     })
+        // }
         this.onChange('endValue', value)
 
     }
@@ -95,7 +98,7 @@ export class DateRange extends Component<IProps, IState> {
                             onChange={this.onStartChange}
                             onOpenChange={this.handleStartOpenChange}
                             onOk={() => {
-                                this.props.timeChange(
+                                this.props.search(
                                     {
                                         startValue: this.state.startValue,
                                         endValue: this.state.endValue
@@ -116,7 +119,7 @@ export class DateRange extends Component<IProps, IState> {
                             onChange={this.onEndChange}
                             onOpenChange={this.handleEndOpenChange}
                             onOk={() => {
-                                this.props.timeChange(
+                                this.props.search(
                                     {
                                         startValue: this.state.startValue,
                                         endValue: this.state.endValue

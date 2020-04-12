@@ -11,6 +11,10 @@ import qs from "qs";
 import "./wsj.scss"
 import { render } from '@testing-library/react';
 import React from 'react';
+import zhCN from 'antd/es/locale/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+import 'antd/dist/antd.css';
 interface Bean {
     isProvMng: string,
     roleCode: string

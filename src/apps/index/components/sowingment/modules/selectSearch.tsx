@@ -42,16 +42,16 @@ export default class SelectSearch extends Component<IProps, IState> {
     private onSearch = (value: string) => {
         if (value) {
             Ajax.get<IBean, IData>(`/trainManager/queryCourseDetailByName`, { courseName: value }, {}).then(({ data }) => {
-                this.setState({
-                    dataSourse: [].concat([],
-                        data.beans.map((item: any) => {
-                            return {
-                                title: item.courseNm,
-                                value: item.courseNm
-                            }
-                        })),
-                    data: data.beans
-                })
+                // this.setState({
+                //     dataSourse: [].concat([],
+                //         data.beans.map((item: any) => {
+                //             return {
+                //                 title: item.courseNm,
+                //                 value: item.courseNm
+                //             }
+                //         })),
+                //     data: data.beans
+                // })
             }).catch(() => { })
         } else {
             this.setState({

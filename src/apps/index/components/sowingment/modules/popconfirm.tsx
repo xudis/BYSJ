@@ -23,7 +23,9 @@ export default class Example extends Component<IProps, IState> {
     public render() {
         return (
             <div>
-                <Popconfirm deletePlatform={this.props.deletePlatform} title="确定删除此项么？" onConfirm={this.confirm} onCancel={this.confirm} >
+                {/* <Popconfirm deletePlatform={this.props.deletePlatform} title="确定删除此项么？" onConfirm={this.confirm} onCancel={this.confirm} > */}
+                <Popconfirm title="确定删除此项么？" onConfirm={this.confirm} onCancel={this.confirm} >
+
                     <Icon style={{ cursor: "pointer" }} type="close"></Icon>
                 </Popconfirm>
             </div>

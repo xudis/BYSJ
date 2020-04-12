@@ -83,7 +83,9 @@ export default class ImgUpload extends Component<IProps, IState> {
                 title="修改图片"
             >
                 <div style={{ width: 200 }}>
-                    <Upload option={option} defaultFileList={this.props.record.imageAddress ? list : []} />
+                    {/* <Upload option={option} defaultFileList={this.props.record.imageAddress ? list : []} /> */}
+                    <Upload defaultFileList={this.props.record.imageAddress ? list : []} />
+
                 </div>
             </Modal>
         )
