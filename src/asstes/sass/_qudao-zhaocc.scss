@@ -639,7 +639,75 @@
         font-size:12px;
         font-weight:bold;
       }
+}
+    }
+  }
+.census .pdnone,.census .mgnone{margin-bottom:0;padding:0;}
+.qd-store{
+  text-align: center;
+  margin-bottom: 5px;
+}
+.common-title-mt-10{
+  margin-top: 23px;
+}
+.common-title-mt-10{
+  h3{
+    span{
+      font-size: 24px;
     }
   }
 }
-.census .pdnone,.census .mgnone{margin-bottom:0;padding:0;}
+
+.art-input{
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #d9d9d9;
+  @include border-radius($radius:4px);
+  color: #bfbfbf;
+  padding: 0 11px;
+  width: 200px;
+}
+.modify_log-wrap ul{
+  padding-left: 0;
+}
+.modify_log-wrap ul li{
+  padding-left: 0;
+}
+.pt-10{
+  padding-top: 10px;
+}
+.mb-10{
+  margin-bottom: 10px;
+}
+button.pl-15.art-btn.art-btn-info.art-btn-medium{
+  margin-left: 15px;
+}
+input.pl-15.art-input{
+  margin-left: 15px;
+}
+.pt-10 .organization-search-wrap{
+  margin-top: 10px;
+  margin-bottom:10 ;
+}
+.mt-10.main ul{
+  margin-top: 10px;
+}
+.art-modal-wrap .art-modal-outer .art-modal-inner .art-modal-actions{
+  margin-top: -14px;
+}
+.detail-result .result-con li label{
+  line-height: 24px;
+}
+.reserveSave{
+  float: right;
+  margin-right: 78px;
+  margin-top: 20px;
+}
+.bottom_login{
+  height: 100px;
+  width: 100%;
+background-color: white;
+position: fixed;
+text-align: center;
+bottom: -30px;
+}

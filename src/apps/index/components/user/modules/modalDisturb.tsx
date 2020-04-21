@@ -2,14 +2,14 @@ import React, { Component } from "react"
 import { Modal } from "antd"
 
 export interface IProps {
-    modalQueOpen: boolean,
+    modalDisturbOpen: boolean,
     handleClose: Function
 }
 export interface IState {
     open: boolean
 }
 
-export default class ModalQue extends Component<IProps, IState> {
+export default class ModalDisturb extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props)
         this.state = {
@@ -31,14 +31,23 @@ export default class ModalQue extends Component<IProps, IState> {
     public render() {
         return (
             <Modal
-                title='问卷修改详情'
+                title='修改免打扰状态'
                 onCancel={() => {
-                    this.props.handleClose("modalChan")
+                    this.props.handleClose("modalDisturb")
                 }}
                 style={{ width: 800, height: 650 }}
-                onOk={this.props.handleClose("modalChan")}
+                onOk={this.props.handleClose("modalDisturb")}
             >
-                <h1>我是弹窗内容</h1>
+                <div>
+                    <ul className="qd-popup-list">
+                        <li>服务补救
+    <i className="iconfont icon-finish"></i>
+                        </li>
+                        <li>质量补救
+    <i className=""></i>
+                        </li>
+                    </ul>
+                </div>
             </Modal>
         )
     }

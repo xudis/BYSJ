@@ -1,0 +1,120 @@
+@charset "UTF-8";
+.modify_log-search-wrap{
+    overflow:hidden;
+    li{
+        float: left;
+        list-style: none;
+        padding-right: 20px;
+        line-height: 36px;
+        height: 36px;
+    }
+}
+.modify_log-wrap .modify_log-search-wrap li{
+    width: 20%;
+    margin-bottom: 6px;
+    padding-left: 0;
+}
+.modify_log-wrap .modify_log-search-wrap li.btn-li{
+    width: 8%;
+}
+.modify_log-search-wrap .qd-btn,.qd-btn{
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center
+    cursor：pointer;
+    height: 40px;
+    line-height: 38px;
+    background-color: #FFF;
+    border: 1px solid #4a8ef2;
+    color:#4a8ef2;
+    padding: 0 24px;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    outline: none;
+    &:hover{
+        border-color: lighten($color: #4a8ef2, $amount: 5%);
+        color: lighten($color: #4a8ef2, $amount: 5%);
+    }
+        &:active{
+        border-color: darken($color: #4a8ef2, $amount: 5%);
+        color: darken($color: #4a8ef2, $amount: 5%);
+    }
+        &.btn-paramy{
+        background-color:  #4a8ef2;
+        color: #FFF
+    }
+        &:hover{
+        border-color: lighten($color: #4a8ef2, $amount: 5%);
+        background-color: lighten($color: #4a8ef2, $amount: 5%);
+    }
+     &:active{
+        border-color: darken($color: #4a8ef2, $amount: 5%);
+        background-color: lighten($color: #4a8ef2, $amount: 5%);
+     }
+}
+&.btn-gray-line{
+        border-color:#AAA;
+        color: #888;
+         &:hover{
+        border-color: lighten($color: #4a8ef2, $amount: 5%);
+        color: lighten($color: #4a8ef2, $amount: 5%);
+    }
+        &:active{
+        border-color: darken($color: #4a8ef2, $amount: 5%);
+        color: darken($color: #4a8ef2, $amount: 5%);
+    }
+}
+
+
+
+.modify_log-wrap{
+    background:#FFF;
+    .tab-wrap{
+        padding: 15px 0;
+        text-align: center;
+        a{
+            color: #000;
+            display: inline-block;
+            font-size: 18px;
+            padding: 10px 20px;
+            &.choose{
+                border-bottom: 5px solid #000;
+            }
+        }
+    }
+    .modify_log-search-wrap{
+        overflow:hidden;
+        li{
+            float: left;
+            list-style: none;
+            padding-right: 20px;
+            line-height: 36px;
+            height: 36px;
+        }
+    }
+}
+.modify_log-wrap .modify_log-search-wrap li{
+    width: 20%;
+    margin-bottom: 6px;
+    padding: 0px;
+}
+
+.modify_log-wrap .modify_log-search-wrap li.btn-li{
+    width: 8%;
+}
+.qd-inner .modify_log-wrap .tab-wrap{
+    border-bottom: solid 1px #dedede;
+    padding: 0px;
+}
+.qd-inner .modify_log-wrap .tab-wrap a.choose{
+    border-bottom: solid 2px #4a8ef2;
+    padding: 0px;
+}
+.modify_log-wrap ul{
+    padding-left: 0;
+}
+.modify_log-wrap ul li{
+    padding-left: 0;
+}

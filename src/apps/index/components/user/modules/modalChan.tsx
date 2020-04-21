@@ -1,19 +1,25 @@
 import React, { Component } from "react"
 import { Modal } from "antd"
-
+import ModalFeedBack from "./modalbackedit"
 export interface IProps {
-    modalQueOpen: boolean,
-    handleClose: Function
+    handleClose: Function,
+    modalHref: string,
+    modalChanOpen: boolean,
+    title: string
 }
 export interface IState {
-    open: boolean
+    open: boolean,
+    modalHref: string,
+    title: string
 }
 
-export default class ModalQue extends Component<IProps, IState> {
+export default class ModalChan extends Component<IProps, IState> {
     constructor(props: IProps) {
         super(props)
         this.state = {
-            open: false
+            open: false,
+            modalHref: props.modalHref,
+            title: props.title
         }
     }
     public handleClick = () => {
@@ -22,7 +28,7 @@ export default class ModalQue extends Component<IProps, IState> {
     public handleEscClick = () => {
         console.info("Esc被按下时触发回调")
     }
-    public handleSubmit = () => {
+    public handleClose = () => {
         this.setState({
             open: false
         })
@@ -31,14 +37,14 @@ export default class ModalQue extends Component<IProps, IState> {
     public render() {
         return (
             <Modal
-                title='问卷修改详情'
+                title={this.state.title}
                 onCancel={() => {
                     this.props.handleClose("modalChan")
                 }}
-                style={{ width: 800, height: 650 }}
+                style={{ width: 600, height: 450 }}
                 onOk={this.props.handleClose("modalChan")}
             >
-                <h1>我是弹窗内容</h1>
+                <ModalFeedBack modalHref={this.state.modalHref} />
             </Modal>
         )
     }
