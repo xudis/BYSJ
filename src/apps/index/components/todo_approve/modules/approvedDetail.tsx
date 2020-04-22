@@ -45,6 +45,8 @@ export interface IBean {
 export default class ApprovedDetail extends Component<IProps, IState>{
     constructor(props: IProps) {
         super(props)
+        // const { record, detailTitlt } = this.props.location.state
+
         const { record, detailTitlt } = this.props.location.state || JSON.parse(sessionStorage.getItem("approvedDetail"))
         sessionStorage.setItem("approvedDetail", JSON.stringify(
             record, detailTitlt
@@ -549,14 +551,14 @@ export default class ApprovedDetail extends Component<IProps, IState>{
                         </div>
                     </div>
                 </div>
-                <Modal
+                {/* <Modal
                     style={{ width: "800px", height: "550" }}
                     visible={this.state.open}
                     onCancel={this.handleClose}
                     title="问卷修改详情"
                 >
                     <QuestionnairePopup imgUrl={this.state.addressUrl} />
-                </Modal>
+                </Modal> */}
                 <Modal
                     style={{ width: "650px", height: "500" }}
                     visible={this.state.reasonOpen}

@@ -215,8 +215,8 @@ export default class ApproveRecord extends Component<IProps, IState>{
                             <RecordHeader
                                 changeTitle={this.changeTitle}
                                 listTitle={listTitle}
-                                searchDara={this.searchData}
-                                updateDate={this.updateData}
+                                searchData={this.searchData}
+                                updateData={this.updateData}
                                 changeDate={this.changeDate}
                             />
                         </div>

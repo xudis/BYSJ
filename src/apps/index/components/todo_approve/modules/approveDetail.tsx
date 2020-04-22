@@ -16,7 +16,10 @@ export interface location {
             serialNum: any,
             callId: string,
             actvId: string,
-            newAnswerId: string
+            newAnswerId: string,
+            calledNm: string,
+            bizId: string,
+            acceptPhone: string
         },
         detailTitle: string
     }
@@ -75,11 +78,14 @@ export interface IBean {
     bean: object,
     qnrAddress: string
 }
+sessionStorage.getItem("approveDetail")
 
 export default class ApproveDetail extends Component<IProps, IState>{
     constructor(props: IProps) {
         super(props)
-        const { record, detailTitle } = this.props.location.state || ((sessionStorage.getItem("approveDetail") ? JSON.parse(sessionStorage.getItem("approveDetail")) : { record: {}, detailTitle: "" }));
+        const { record, detailTitle } = this.props.location.state || ((sessionStorage.getItem("approveDetail") ? "" : { record: {}, detailTitle: "" }));
+
+        // const { record, detailTitle } = this.props.location.state || ((sessionStorage.getItem("approveDetail") ? JSON.parse(sessionStorage.getItem("approveDetail")) : { record: {}, detailTitle: "" }));
         sessionStorage.setItem("approveDetail", JSON.stringify({
             record,
             detailTitle

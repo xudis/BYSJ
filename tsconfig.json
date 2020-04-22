@@ -8,6 +8,18 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
+    "checkJs": false,
+    "declarationDir": ".",
+    "declaration": true,
+    "declarationMap": false,
+    "sourceMap": false,
+    "composite": false,
+    "removeComments": false,
+    "importHelpers": true,
+    "downlevelIteration": false,
+    "alwaysStrict": true,
+    "allowUmdGlobalAccess": true,
+    "allowUnreachableCode": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -17,9 +29,24 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "./",
+    "disableSizeLimit": false,
+    "diagnostics": false,
+    "extendedDiagnostics": false,
+    "noErrorTruncation": false,
+    "preserveConstEnums": false,
+    "pretty": true,
+    "skipDefaultLibCheck": true,
+    "keyofStringsOnly": true,
+    "stripInternal": true,
+    "traceResolution": false
   },
   "include": [
-    "src"
+    "src/**/*",
+    "typings/*"
+  ],
+  "exclude": [
+    "dist/**/*"
   ]
 }

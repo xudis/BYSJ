@@ -39,7 +39,7 @@ export default class ModifyLog extends Component<IProps, IState> {
             resultType: [],
             searchParams: {
                 startValue: this.startValue.format("YYYY-MM-DD 00:00:00"),
-                endTime: this.endValue.format("YYYY-MM-DD HH:mm:ss"),
+                endValue: this.endValue.format("YYYY-MM-DD HH:mm:ss"),
                 resultType: "",
                 otherValue: "常客维系",
                 hallName: this.hallName,
