@@ -177,7 +177,7 @@ export default class resultChan extends Component<IProps, IState> {
                 total: data.bean.total
             })
         }).catch(() => { })
-        Ajax.post("/marketResult/getMarketResult", this.state.searchParams).then(({ data }: { data: any }) => {
+        Ajax.post("/marketResult/getMarketResult", this.state.selectParams).then(({ data }: { data: any }) => {
             console.log(data);
             this.setState({
                 data: data.beans,
@@ -195,7 +195,7 @@ export default class resultChan extends Component<IProps, IState> {
                 selectedRowName: "请点击选择",
             })
         }).catch(() => { })
-        Ajax.post("/marketResult/getMarketResult", this.state.searchParams).then(({ data }: { data: any }) => {
+        Ajax.post("/marketResult/getMarketResult", this.state.selectParams).then(({ data }: { data: any }) => {
             console.log(data);
             this.setState({
                 data: data.beans,

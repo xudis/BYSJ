@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import Message from '../component/message'
+import Message from '../components/message'
 import { actions } from "../store/combine"
 
 const mapStateToProps = (state: { charactor: any, proviceRoleCode: any }) => {

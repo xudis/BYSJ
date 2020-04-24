@@ -127,7 +127,18 @@ export default class ResultDetails extends Component<IProps, IState>{
             }
             sessionStorage.setItem('busResultModify', JSON.stringify(busResultModify));
         } else {
-            busResultModify = JSON.parse(sessionStorage.getItem('busResultModify'))
+            busResultModify = {
+                record: {
+                    campaignId: "1",
+                    serialNum: "1",
+                    sampleId: "1",
+                    bizId: "1",
+                    hallId: "1",
+                    actvId: "1",
+
+                }
+            }
+            // busResultModify = JSON.parse(sessionStorage.getItem('busResultModify'))
         }
         this.state = {
             editContent: ' 修改',
@@ -491,7 +502,7 @@ export default class ResultDetails extends Component<IProps, IState>{
                 dataThree: data.beans,
             })
         })
-        Ajax.post("/marketResult/ getmarketResult", { stateParameter: "BUSINESS RESULT" }).then(({ data }) => {
+        Ajax.post("/marketResult/getmarketResult", { stateParameter: "BUSINESS RESULT" }).then(({ data }) => {
             let resultTypeArr: any[] = data.beans;
             for (var i = 0; i < resultTypeArr.length; i++) {
                 if (resultTypeArr[i].value === '0402') {
@@ -1014,8 +1025,8 @@ export default class ResultDetails extends Component<IProps, IState>{
                             <ModalSerive
                                 yeresultOpen={this.state.serResultOpen}
                                 handleClose={this.handleClose}
-                                compaigngIdparam={this.state.searchParams.campaignId}
-                                simpleIdParam={this.state.searchParams.sampleId}
+                            // compaigngIdparam={this.state.searchParams.campaignId}
+                            // simpleIdParam={this.state.searchParams.sampleId}
                             /> : ""
                     }
                     {

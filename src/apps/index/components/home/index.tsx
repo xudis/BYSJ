@@ -18,10 +18,10 @@ export interface IState {
     }
 }
 export interface IProps {
-    dataLists: Array<{}>,
+    // dataLists: Array<{}>,
     history: any
 }
-export default class Data_center extends Component<IProps, IState>{
+export default class Home extends Component<IProps, IState>{
     startValue: null
     endValue: null
     constructor(props: IProps) {

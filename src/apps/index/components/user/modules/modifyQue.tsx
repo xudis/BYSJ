@@ -159,7 +159,7 @@ export default class ModifyLog extends Component<IProps, IState> {
         this.setState({
             searchParams: { ...this.state.searchParams, start: 0 }
         }, () => {
-            Ajax.post("/searchModifyLogs=selectLogsByParams", this.state.searchParams).then(({ data }: { data: any }) => {
+            Ajax.post("/searchModifyLogs/selectLogsByParams", this.state.searchParams).then(({ data }: { data: any }) => {
                 console.log(data);
                 this.setState({
                     data: data.beans,

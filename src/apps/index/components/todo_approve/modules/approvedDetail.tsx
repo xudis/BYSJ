@@ -45,9 +45,9 @@ export interface IBean {
 export default class ApprovedDetail extends Component<IProps, IState>{
     constructor(props: IProps) {
         super(props)
-        // const { record, detailTitlt } = this.props.location.state
+        const { record, detailTitlt } = this.props.location.state
 
-        const { record, detailTitlt } = this.props.location.state || JSON.parse(sessionStorage.getItem("approvedDetail"))
+        // const { record, detailTitlt } = this.props.location.state || JSON.parse(sessionStorage.getItem("approvedDetail"))
         sessionStorage.setItem("approvedDetail", JSON.stringify(
             record, detailTitlt
         ))

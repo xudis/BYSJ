@@ -2,6 +2,16 @@
   "name": "nacfcm-portal",
   "version": "0.1.0",
   "private": true,
+  "files": [
+    "src/",
+    "build/",
+    "public/",
+    "tests/",
+    "_gitignore",
+    ".editorconfig",
+    ".eslintignore",
+    ".eslintrc"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -30,6 +40,12 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "buildConfig": {
+    "entry": {
+      "index": "./src/apps/index/index.tsx"
+    },
+    "localization": false
   },
   "browserslist": {
     "production": [
