@@ -253,7 +253,6 @@ export default class Personal extends Component<IProps, IState>{
                                             beforeUpload={this.state.option.beforeUpload}
                                             data={this.state.option}
                                             style={{ margin: "30px" }}
-                                            defaultFileList={this.state.imgInfo ? list : []}
                                         ></Upload>
                                     </div>
                                 </Modal> : ""

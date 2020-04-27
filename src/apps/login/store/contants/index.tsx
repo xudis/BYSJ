@@ -1,0 +1,2 @@
+export const EDITORUSERID = "EDITORUSERID"
+export type EDITORUSERID = typeof EDITORUSERID
